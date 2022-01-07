@@ -1,0 +1,480 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --color-btn-red: hsl(7, 99%, 70%);
+  --color-btn-yellow: hsl(51, 100%, 49%);
+  --text-c-graphics: hsl(167, 40%, 24%);
+  --text-c-photography: hsl(198, 62%, 26%);
+  --text-c-footer: #78c4b6;
+
+  --color-text-900: hsl(212, 27%, 19%);
+  --color-text-700: hsl(213, 9%, 39%);
+  --color-text-300: hsl(232, 10%, 55%);
+  --color-bg-testmonial: hsl(210, 4%, 67%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --ff-text-heading: "Fraunces", serif;
+  --ff-text: "Barlow", sans-serif;
+  --ff-logo: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+
+.header-main {
+  width: 100%;
+  height: 100vh;
+  background-image: url("images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  margin: 2rem;
+  margin-left: 3rem;
+}
+
+.nav-container {
+  font-family: var(--ff-text);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: rgb(231, 243, 255);
+  margin-inline-end: 3rem;
+  font-size: 1rem;
+}
+
+.nav-items a:hover {
+  color: var(--color-white);
+}
+
+.contact a {
+  font-family: var(--ff-text-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-900);
+  background: var(--color-white);
+  padding: 1em 1.5em;
+  border-radius: 2em;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact a:hover {
+  background: skyblue;
+  color: var(--color-white);
+}
+
+.header-text h1 {
+  text-transform: uppercase;
+  color: var(--color-white);
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2em;
+  font-family: var(--ff-text-heading);
+  letter-spacing: 0.5rem;
+}
+.header-text img {
+  display: block;
+  margin-inline: auto;
+  margin-top: 4em;
+}
+
+/* header ends here  */
+
+/* main starts here  */
+.grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "egg-text egg-img"
+    "glass-img glass-text"
+    "cherry orange-1";
+}
+
+/* all */
+.grid img {
+  width: 100%;
+  height: 100%;
+}
+
+/* all h2  */
+.main-h,
+.btn {
+  font-family: var(--ff-text-heading);
+  text-decoration: none;
+  color: var(--color-text-900);
+}
+
+.grid .main-h {
+  font-size: 2rem;
+  line-height: 1.5em;
+}
+
+/* egg and glass only  */
+
+.grid .centering p {
+  font-size: 1rem;
+  color: var(--color-text-700);
+  font-family: var(--ff-text);
+  margin-top: 1.7rem;
+}
+
+.centering {
+  margin: auto;
+  padding: 11rem;
+  line-height: 1.7em;
+}
+
+.centering a {
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+/* underline for the learn more link  */
+.egg-btn,
+.glass-btn {
+  position: relative;
+}
+.egg-btn::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  width: 100%;
+  height: 5px;
+  opacity: 0.4;
+  border-radius: 1rem;
+  background-color: var(--color-btn-yellow);
+}
+
+.btn:hover::after {
+  opacity: 1;
+  height: 8px;
+  z-index: -1;
+}
+
+.glass-btn::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  width: 100%;
+  height: 5px;
+  opacity: 0.4;
+  border-radius: 1rem;
+  background-color: var(--color-btn-red);
+}
+
+/* egg and glass only ends  */
+
+.egg-text {
+  grid-area: egg-text;
+}
+
+.egg-img {
+  grid-area: egg-img;
+}
+
+.glass-img {
+  grid-area: glass-img;
+}
+
+.glass-text {
+  grid-area: glass-text;
+}
+
+.cherry {
+  grid-area: cherry;
+  color: var(--text-c-graphics);
+}
+
+.orange-1 {
+  grid-area: orange-1;
+  color: var(--text-c-photography);
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 10%;
+  margin-inline: min(13vw, 13rem);
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+figcaption p {
+  font-family: var(--ff-text);
+  margin-top: 1.5rem;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+}
+
+figcaption h2 {
+  font-family: var(--ff-text-heading);
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+/* testimonails starts here  */
+
+.testimonials {
+  text-align: center;
+  margin: min(10rem, 10%);
+}
+.wrapper {
+  margin-top: 5em;
+  gap: 5em;
+  justify-content: center;
+}
+.testimonials-h {
+  text-transform: uppercase;
+  font-family: var(--ff-text-heading);
+  letter-spacing: 0.3rem;
+  font-size: 1rem;
+  color: var(--color-text-300);
+}
+
+.t-items > img {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+.t-text {
+  font-family: var(--ff-text);
+  color: var(--color-text-700);
+  margin-top: 2em;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.t-name {
+  margin-top: 1.5em;
+  font-family: var(--ff-text-heading);
+  font-size: 1rem;
+  color: var(--color-text-900);
+}
+.t-position {
+  margin-top: 1em;
+  font-size: 0.7em;
+  font-family: var(--ff-text);
+  color: var(--color-text-300);
+}
+
+/* testimonials ends here  */
+
+/* Photogallery  */
+
+.gallery {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "item1 item2 item3 item4";
+}
+
+.item1 {
+  grid-area: item1;
+}
+.item2 {
+  grid-area: item2;
+}
+.item3 {
+  grid-area: item3;
+}
+.item4 {
+  grid-area: item4;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+.f-wrapper {
+  padding: min(5rem, 10%);
+  text-align: center;
+  background: var(--text-c-footer);
+}
+.f-wrapper h2 {
+  font-family: var(--ff-logo);
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 2.5em;
+}
+.f-wrapper a {
+  text-decoration: none;
+  color: var(--text-c-graphics);
+  font-family: var(--ff-text);
+  transition: color 0.5s ease;
+}
+
+.f-wrapper a:hover {
+  color: var(--color-white);
+}
+
+.icons {
+  margin-top: 2.5em;
+}
+
+.icons a {
+  margin-inline: 1em;
+}
+
+/* burger menu  */
+.burger {
+  display: none;
+}
+.burger div {
+  width: 35px;
+  height: 3px;
+  background-color: var(--color-white);
+  margin: 5px;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+    /* it will remove the overflow of the screen  */
+  }
+  .header-main {
+    background-image: url("images/mobile/image-header.jpg");
+    max-height: 100%;
+  }
+  .logo {
+    margin: 1.5em;
+  }
+
+  .header-text h1 {
+    font-size: 2.7rem;
+    margin-top: 4em;
+  }
+  .header-text img {
+    margin-top: 6em;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "egg-img"
+      "egg-text"
+      "glass-img"
+      "glass-text"
+      "cherry"
+      "orange-1";
+  }
+
+  .grid img {
+    width: 100vw;
+    height: 100%;
+  }
+  .centering {
+    padding: 4rem;
+  }
+  figcaption p {
+    margin-top: 1rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .gallery {
+    grid-template-areas:
+      "item1 item2"
+      "item3 item4";
+  }
+
+  .navbar {
+    position: absolute;
+    right: 5vw;
+    top: 8vh;
+    flex-direction: column;
+    height: 70vh;
+    width: 90%;
+    background: var(--color-white);
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(110%);
+    transition: transform 0.5s ease-in;
+    /* it will move the nav body from screen to right */
+  }
+
+  .nav-items a {
+    color: var(--color-text-900);
+  }
+
+  .contact a {
+    color: var(--color-text-900);
+    background: var(--color-btn-yellow);
+  }
+  .burger {
+    display: block;
+    margin-right: 3rem;
+    cursor: pointer;
+  }
+
+  .nav-items {
+    opacity: 0;
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* burger animation  */
