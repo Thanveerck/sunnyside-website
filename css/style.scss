@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+
+$color-btn-red: hsl(7, 99%, 70%);
+$color-btn-yellow: hsl(51, 100%, 49%);
+$text-c-graphics: hsl(167, 40%, 24%);
+$text-c-photography: hsl(198, 62%, 26%);
+$text-c-footer: #78c4b6;
+
+$color-text-900: hsl(212, 27%, 19%);
+$color-text-700: hsl(213, 9%, 39%);
+$color-text-300: hsl(232, 10%, 55%);
+$color-bg-testmonial: hsl(210, 4%, 67%);
+$color-white: hsl(0, 0%, 100%);
+
+$ff-text-heading: "Fraunces", serif;
+$ff-text: "Barlow", sans-serif;
+$ff-logo: "Poppins", sans-serif;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+// mobile development
+
+.hero-img {
+  background: url("../images/mobile/image-header.jpg");
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5em;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .burger {
+    width: 2.5em;
+  }
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  width: 60%;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+
+  .navBar {
+    list-style: none;
+    padding-top: 8em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    a {
+      text-decoration: none;
+      color: $color-text-900;
+      font-family: $ff-text;
+      font-size: 0.9rem;
+      display: block;
+
+      padding: 0.75em 1.5em;
+    }
+  }
+  .close {
+    right: 10%;
+    top: 1.5em;
+    position: absolute;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+.contact {
+  border: none;
+  background: $color-btn-yellow;
+  display: inline-block;
+  border-radius: 2.5em;
+}
+
+.logo {
+  img {
+    width: 7.3em;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 10% 0;
+  height: 67.9vh;
+  h1 {
+    font-family: $ff-text-heading;
+    color: white;
+    text-transform: uppercase;
+    margin: auto;
+    font-size: 2.4em;
+    width: 90%;
+    letter-spacing: 0.18em;
+    font-weight: 900;
+  }
+  svg {
+    margin-top: 5em;
+    animation: moveArrow 1s alternate-reverse infinite;
+  }
+}
+
+.features {
+  margin-bottom: 3em;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    font-family: $ff-text-heading;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $color-text-900;
+    margin-top: 1.5em;
+  }
+  p {
+    font-family: $ff-text;
+    font-size: 0.8rem;
+    color: $color-text-700;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-inline: 2.5em;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-top: 1.5em;
+    display: block;
+    font-family: $ff-text-heading;
+    color: $color-text-900;
+  }
+
+  .figContainer {
+    position: relative;
+
+    .figText {
+      position: absolute;
+      bottom: 20%;
+    }
+  }
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-areas:
+    "milk orange1"
+    "cone sugar";
+
+  img {
+    width: 100%;
+  }
+
+  .milk-gallery {
+    grid-area: milk;
+  }
+
+  .orange-gallery {
+    grid-area: orange1;
+  }
+
+  .cone-gallery {
+    grid-area: cone;
+  }
+  .sugar-gallery {
+    grid-area: sugar;
+  }
+}
+
+footer {
+  text-align: center;
+  background: $text-c-footer;
+
+  svg {
+    margin-top: 2.5em;
+    path {
+      fill: #2b7365;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 1.5em;
+    a {
+      font-size: 0.8rem;
+      color: #2b7365;
+      font-family: $ff-text;
+    }
+  }
+
+  .footer-links {
+    padding: 2.3em 0em;
+    display: flex;
+    justify-content: center;
+    gap: 1.4em;
+
+    a {
+      color: #2b7365;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 414px) {
+  .logo {
+    img {
+      width: 7.5em;
+    }
+  }
+  .hero {
+    padding: 20% 0;
+
+    h1 {
+      font-size: 2.7em;
+    }
+  }
+}
+
+// tablet design
+
+@media screen and (min-width: 680px) {
+  .hero-img {
+    background: url("../images/desktop/image-header.jpg");
+
+    background-position-x: 49%;
+    background-size: cover;
+  }
+  .hero {
+    height: 72.9vh;
+    padding: 9%;
+    h1 {
+      width: 60%;
+
+      line-height: 1.2em;
+    }
+  }
+  .burger {
+    display: none;
+  }
+  .close {
+    display: none;
+  }
+
+  nav {
+    transform: translateX(0);
+    position: unset;
+    background: none;
+    display: block;
+    width: auto;
+    height: auto;
+
+    .navBar {
+      padding-top: 0;
+      flex-direction: row;
+      gap: 1.2rem;
+
+      a {
+        color: white;
+        font-size: 0.9rem;
+      }
+      .contact {
+        background: white;
+      }
+    }
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "text img";
+
+    .text {
+      grid-area: text;
+      margin: auto;
+    }
+
+    .img {
+      grid-area: img;
+    }
+  }
+
+  .features.left {
+    grid-template-areas: "img text";
+  }
+
+  .img-grid {
+    grid-template-areas: "milk orange1 cone sugar";
+
+    .milk-gallery {
+      grid-area: milk;
+    }
+
+    .orange-gallery {
+      grid-area: orange1;
+    }
+
+    .cone-gallery {
+      grid-area: cone;
+    }
+    .sugar-gallery {
+      grid-area: sugar;
+    }
+  }
+}
+// laptop design
+@media screen and (min-width: 920px) {
+  .hero {
+    height: 70vh;
+    h1 {
+      width: 80%;
+    }
+  }
+  .features {
+    margin: 5em;
+  }
+  .services {
+    gap: 2em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  nav {
+    .navBar {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+  .logo {
+    img {
+      width: 9.7em;
+    }
+  }
+
+  .hero {
+    padding: 8%;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .features {
+    margin-bottom: 3em;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+
+      margin-inline: 3em;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+  footer {
+    .footer-nav {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+    .footer-links {
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+// big screen
+
+@media screen and (min-width: 1535px) {
+  .hero {
+    padding: 8%;
+    h1 {
+      font-size: 3.4rem;
+    }
+  }
+  nav {
+    .navBar {
+      gap: 2em;
+      a {
+        font-size: 1.05rem;
+      }
+    }
+  }
+  .logo {
+    img {
+      width: 9.8em;
+    }
+  }
+  .hero-img {
+    background-position-y: 50%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .hero {
+    padding: 8%;
+    h1 {
+      font-size: 4.4rem;
+    }
+  }
+  nav {
+    .navBar {
+      gap: 2em;
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .logo {
+    img {
+      width: 9.8em;
+    }
+  }
+  .contact {
+    font-size: 1.2rem;
+  }
+  .hero-img {
+    background-position-y: 60%;
+  }
+
+  .features {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.4rem;
+
+      margin-inline: 2.9em;
+    }
+
+    a {
+      font-size: 1.4rem;
+    }
+  }
+  .services {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+
+  footer {
+    .footer-nav {
+      a {
+        font-size: 1.4rem;
+      }
+    }
+    .footer-links {
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
